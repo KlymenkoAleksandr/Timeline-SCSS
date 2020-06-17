@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background-color: #96fcb9; }
+
+.timeline {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 18%;
+  right: 18%;
+  background-color: #85e6a7;
+  height: 60px;
+  padding: 0 45px;
+  counter-reset: year 2011; }
+  .timeline li {
+    list-style: none;
+    position: relative;
+    width: 150px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: currentColor; }
+    .timeline li:not(:last-child) {
+      margin-right: 4px; }
+    .timeline li::before {
+      content: "";
+      font-size: 36px;
+      color: currentColor; }
+    .timeline li::after {
+      counter-increment: year;
+      content: counter(year);
+      position: absolute;
+      font-size: 65px;
+      color: currentColor; }
+    .timeline li:nth-child(odd)::after {
+      bottom: -70px; }
+    .timeline li:nth-child(even)::after {
+      top: -70px; }
+    .timeline li:nth-child(odd) .icon-wraper {
+      top: -250px; }
+      .timeline li:nth-child(odd) .icon-wraper::before {
+        top: 100%; }
+    .timeline li:nth-child(even) .icon-wraper {
+      bottom: -250px; }
+      .timeline li:nth-child(even) .icon-wraper::before {
+        bottom: 100%; }
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border: 3px solid black;
+  border-radius: 50%; }
+
+.icon-wraper {
+  width: 120px;
+  height: 120px;
+  font-size: 75px;
+  background-color: currentColor;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; }
+  .icon-wraper::before {
+    content: "";
+    border: 2px solid black;
+    position: absolute;
+    height: 154px; }
+  .icon-wraper i {
+    color: #ffffff; }
+
+/*# sourceMappingURL=index.css.map */
